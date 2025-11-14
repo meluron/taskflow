@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/taskflow/icon.png" type="image/png">
+  <title>taskflow</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Chart.js for graphs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <!-- Favicon -->
+  <link rel="icon" href="./logo.png" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    
+    <div class="header">
+      <blockquote class="beliefs" contenteditable="true">
+        Just focus on today doing things that minimize the regret.
+      </blockquote>
+      <p id="current-date"></p>
+    </div>
+    
+    <div class="button-space">
+      <button class="report-btn" onclick="generateTimeReport()" aria-label="View time report">
+        <i class="fas fa-chart-bar"></i>
+      </button>
+      <button class="clear-all-btn" onclick="clearAllTasks()" aria-label="Clear all tasks">
+        <i class="fas fa-broom"></i>
+      </button>
+    </div>
+    
+    <div class="two-column-layout">
+      <div class="tasks-column">
+        <div class="input-box">
+          <input type="text" id="target-input" placeholder="Task for Today" autocomplete="off">
+        </div>
+        
+        <ul id="task-list" class="task-list"></ul>
+      </div>
+      
+      <div class="subtasks-column">
+        <div class="subtasks-header">
+          <h2 id="current-task-title">No task selected</h2>
+        </div>
+        
+        <div id="subtasks-container" class="subtasks-wrapper">
+          <input type="text" id="subtask-input" class="subtask-input" placeholder="Select a task first..." disabled>
+          <div class="subtask-list-wrapper">
+            <ul id="subtask-list" class="subtask-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="footer" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <!-- Left image -->
+        <img src="https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/taskflow/icon.png" alt="taskflow logo" style="height: 40px; display: block;">
+        
+        <!-- Vertical line -->
+        <div style="width: 1px; height: 30px; background-color: #ccc; margin: 0 10px;"></div>
+        
+        <!-- Existing content -->
+        <div style="display: flex; align-items: center; gap: 0;">
+            An initiative by 
+            <a href="https://meluron.github.io/" target="_blank" style="display: inline-flex; align-items: center; margin-left: -12px; margin-right: -17px;">
+                <img src="https://raw.githubusercontent.com/meluron/assets/refs/heads/main/logos/meluron/icon.png" alt="meluron logo" style="height: 50px; display: block;">
+            </a>
+            <b>eluron.</b>
+        </div>
+    </div>
+  </div>
+  <!-- Custom JS -->
+  <script src="./script.js"></script>
+</body>
+</html>
+
+
+        
